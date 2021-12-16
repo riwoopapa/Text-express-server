@@ -6,5 +6,7 @@ app.get('/', (req, res) => {
   res.send('Hello World');
 });
 
-app.listen(PORT, HOST);
-console.log(`Running on PORT: ${PORT}`);
+app.listen(PORT, err => {
+  if(err) throw new Error('Error!!!')
+  console.log(`Listening on PORT: ${PORT}..`)
+})
